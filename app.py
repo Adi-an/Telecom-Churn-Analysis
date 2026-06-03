@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import joblib
 
 st.title("Telco Customer Churn Prediction")
 
-model = pickle.load(open("random_forest_churn_model.pkl", "rb"))
+model = joblib.load("random_forest_churn_model.pkl")
 label_encoders = pickle.load(open("label_encoders.pkl", "rb"))
 feature_columns = pickle.load(open("feature_columns.pkl", "rb"))
 
