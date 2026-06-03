@@ -4,12 +4,11 @@ import pickle
 
 st.title("Telco Customer Churn Prediction")
 
-model = pickle.load(open("notebooks/random_forest_churn_model.pkl", "rb"))
-label_encoders = pickle.load(open("notebooks/label_encoders.pkl", "rb"))
-feature_columns = pickle.load(open("notebooks/feature_columns.pkl", "rb"))
+model = pickle.load(open("random_forest_churn_model.pkl", "rb"))
+label_encoders = pickle.load(open("label_encoders.pkl", "rb"))
+feature_columns = pickle.load(open("feature_columns.pkl", "rb"))
 
-df = pd.read_csv(r"C:\Users\adith\Downloads\archive\WA_Fn-UseC_-Telco-Customer-Churn.csv")
-
+df = pd.read_csv("WA_Fn-UseC_-Telco-Customer-Churn.csv")
 st.write("Enter customer details")
 
 gender = st.selectbox("Gender", df["gender"].unique())
